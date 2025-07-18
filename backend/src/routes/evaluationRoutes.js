@@ -13,7 +13,6 @@ router.post('/evaluate', authenticateClerk, async (req, res) => {
       return res.status(400).json({ message: 'Both resumeId and jobOfferId are required.' });
     }
 
-    // Récup les contenus textuels du CV et de l'offre d'emploi depuis la base de données
     const resume = await Resume.findById(resumeId);
     const jobOffer = await JobOffer.findById(jobOfferId);
 
